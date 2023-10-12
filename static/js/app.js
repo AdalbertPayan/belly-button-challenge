@@ -3,8 +3,7 @@ let url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1
 
 // create the displayCharts function to display the charts and panel
 function displayCharts(id) {
-     // we do no have access to data here
-    // we need to get the data again
+     // we do not have access to data here, we need to grab the data again
     d3.json(url).then(function(data) {
         samples = data.samples;
         console.log(samples);
@@ -27,7 +26,7 @@ function displayCharts(id) {
 
         console.log(topOtuIds);
 
-        // create the trace for the bar chart
+        // create trace for bar charte
         let trace1 = {
             x: topSampleValues,
             y: topOtuIds.map(otuId => `OTU ${otuId}`),
@@ -36,7 +35,7 @@ function displayCharts(id) {
             orientation: "h"
         };
 
-        // create the data array for the bar chart
+        // create data array for bar chart
         let barData = [trace1];
 
         // define the bar plot layout
@@ -57,7 +56,7 @@ function displayCharts(id) {
             marker: {
                 size: sampleValues,
                 color: otuIds,
-                colorscale: "Earth"
+                colorscale: "YlGnBu"
             }
         };
 
